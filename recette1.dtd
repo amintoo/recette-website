@@ -1,0 +1,87 @@
+<!ELEMENT recettes (recette+, auteurs+, Categories+, Sous_Categories+, ingredients+,produits+)>
+<!-- liste de recette -->
+<!ELEMENT recette (titre, resumé, photo, difficulté, ingredientsRec, temps, description, note, Auteur, nbPersonne)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT resumé (#PCDATA)>
+<!ELEMENT photo (#PCDATA)>
+<!ELEMENT difficulté (#PCDATA)>
+<!ELEMENT ingredientsRec (ingredientRec+)>
+<!ELEMENT ingredientRec (#PCDATA)>
+<!ELEMENT temps (preparation, cuisson, repos?)>
+<!ELEMENT preparation (#PCDATA)>
+<!ELEMENT cuisson (#PCDATA)>
+<!ELEMENT repos (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT Auteur (#PCDATA)>
+<!ELEMENT nbPersonne (#PCDATA)>
+
+<!-- attribut du recette-->
+<!ATTLIST recette
+	id_rec CDATA #REQUIRED
+	datePubli CDATA #REQUIRED
+	categorie CDATA #REQUIRED>
+
+	
+<!ATTLIST ingredientRec
+	ref CDATA #REQUIRED>
+	
+<!-- attribut de l'auteur-->	
+<!ATTLIST Auteur
+	ref_auteur CDATA #REQUIRED>
+	
+<!ELEMENT auteurs (auteur+)>
+<!ELEMENT auteur (nom?,prenom, pays, recette_auteur+, biographie)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+<!ELEMENT recette_auteur (#PCDATA)>
+<!ELEMENT biographie (#PCDATA)>
+<!ATTLIST auteur
+	id_aut CDATA #REQUIRED
+	sexe CDATA #REQUIRED
+>
+
+<!-- liste categorie -->
+<!ELEMENT Categories (Categorie+)>
+<!ELEMENT Categorie (Description_Categorie?)>
+<!ELEMENT Description_Categorie (#PCDATA)>
+<!ATTLIST Categorie
+	id_cat CDATA #REQUIRED
+	nom CDATA #REQUIRED
+>
+
+<!-- liste Sous-Categorie -->
+
+<!ELEMENT Sous_Categories (Sous_Categorie+)>
+<!ELEMENT Sous_Categorie (DescriptionSCat, Cat_Ref)>
+<!ELEMENT DescriptionSCat (#PCDATA)>
+<!ELEMENT Cat_Ref (#PCDATA)>
+<!ATTLIST Sous_Categorie
+	id_souscat CDATA #REQUIRED
+	nom CDATA #REQUIRED
+>
+<!ATTLIST Cat_Ref
+	ref_cat CDATA #REQUIRED
+>
+
+<!-- liste des Ingredients -->
+
+<!ELEMENT ingredients (ingredient+)>
+<!ELEMENT ingredient (recetteIngredient+, DescriptionIngredient+, apportNutritif?, apportEnergie?, saison?)>
+<!ELEMENT recetteIngredient (#PCDATA)>
+<!ELEMENT DescriptionIngredient (#PCDATA)>
+<!ELEMENT apportNutritif (#PCDATA)>
+<!ELEMENT apportEnergie (#PCDATA)>
+<!ELEMENT saison (#PCDATA)>
+<!ATTLIST ingredient
+	id_ing CDATA #REQUIRED
+	nom CDATA #REQUIRED
+>
+
+<!-- liste des produits -->
+<!ELEMENT produits (produit+)>
+<!ELEMENT produit (#PCDATA)>
+<!ATTLIST produit 
+  id_pro CDATA #REQUIRED 
+  nom CDATA #REQUIRED>

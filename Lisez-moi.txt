@@ -1,0 +1,18 @@
+                                |                 |        |               |
+				|  Projet XML     |        | Aix marseille |
+				\_________________/        \______________/
+
+Realiser Par :  DAHER AHMED Amin
+                HASSAN FARAH Mouktar
+	       -----------------------------
+
+
+Description des fichier
+
+
+recettes1.xsl est la feuille qui a generé le document xml(recette.xml) 
+
+recettetranf.xslt est la feuille qui a generé toutes les pages xhtml.
+
+
+merci. 
